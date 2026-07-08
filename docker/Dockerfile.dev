@@ -1,0 +1,13 @@
+FROM maven:3.9.4-eclipse-temurin-17
+
+WORKDIR /app
+
+# Copy pom.xml and download dependencies once
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+RUN chown -R 1000:1000 /app
+# Source code will be mounted via volume (NOT copied)
+EXPOSE 7088
+
+CMD ["mvn", "spring-boot:run"]
