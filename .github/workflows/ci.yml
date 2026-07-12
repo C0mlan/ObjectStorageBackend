@@ -28,7 +28,7 @@ jobs:
 
       # Run unit + integration tests
       - name: Run full test pipeline
-        run: ./mvn clean verify
+        run: mvn clean verify
 
       # Upload Surefire reports
       - name: Upload Surefire reports
