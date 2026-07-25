@@ -20,6 +20,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleUserConflictException(ConflictException ex) {
             return ResponseBuilder.error(
                     HttpStatus.CONFLICT,
+                    ex.getErrorCode(),
                     ex.getMessage(),
                     null
             );
@@ -28,6 +29,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleNotFoundException(NotFoundException ex) {
         return ResponseBuilder.error(
                 HttpStatus.NOT_FOUND,
+                ex.getErrorCode(),
                 ex.getMessage(),
                 null
         );
@@ -36,6 +38,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleBadRequestException(BadRequestException ex) {
         return ResponseBuilder.error(
                 HttpStatus.BAD_REQUEST,
+                ex.getErrorCode(),
                 ex.getMessage(),
                 null
         );
@@ -45,6 +48,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleUnauthorizedException(UnauthorizedException ex) {
         return ResponseBuilder.error(
                 HttpStatus.UNAUTHORIZED,
+                ex.getErrorCode(),
                 ex.getMessage(),
                 null
         );
@@ -54,6 +58,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleForbiddenException(ForbiddenException ex) {
         return ResponseBuilder.error(
                 HttpStatus.FORBIDDEN,
+                ex.getErrorCode(),
                 ex.getMessage(),
                 null
         );
@@ -72,6 +77,7 @@ public class GlobalExceptionHandler {
 
         return ResponseBuilder.error(
                 HttpStatus.BAD_REQUEST,
+                null,
                 "Validation failed",
                 errors
         );
