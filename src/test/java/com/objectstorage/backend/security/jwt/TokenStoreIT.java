@@ -1,4 +1,4 @@
-package com.objectstorage.backend.security.config.jwt;
+package com.objectstorage.backend.security.jwt;
 
 import com.objectstorage.backend.security.config.AbstractTest;
 import com.objectstorage.backend.security.jwt.TokenStore;

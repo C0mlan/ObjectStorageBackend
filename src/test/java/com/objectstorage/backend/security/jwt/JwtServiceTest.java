@@ -1,4 +1,4 @@
-package com.objectstorage.backend.security.config.jwt;
+package com.objectstorage.backend.security.jwt;
 
 import com.objectstorage.backend.modules.user.model.Role;
 import com.objectstorage.backend.modules.user.model.User;
