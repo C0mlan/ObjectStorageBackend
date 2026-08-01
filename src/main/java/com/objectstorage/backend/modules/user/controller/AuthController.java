@@ -2,6 +2,8 @@ package com.objectstorage.backend.modules.user.controller;
 import com.objectstorage.backend.common.ApiResponse;
 import com.objectstorage.backend.common.ResponseBuilder;
 import com.objectstorage.backend.common.response.ResponseMessages;
+import com.objectstorage.backend.modules.user.dto.LoginRequestDTO;
+import com.objectstorage.backend.modules.user.dto.LoginResponseDTO;
 import com.objectstorage.backend.modules.user.dto.RegisterRequestDTO;
 import com.objectstorage.backend.modules.user.dto.RegisterResponseDTO;
 import jakarta.validation.Valid;
@@ -14,19 +16,31 @@ import org.springframework.web.bind.annotation.RestController;
 import com.objectstorage.backend.modules.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 
+
+
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
     private final UserService userService;
+
 
     @PostMapping("/register/")
     public ResponseEntity<ApiResponse<RegisterResponseDTO>> register(@Valid @RequestBody RegisterRequestDTO dto) {
         return ResponseBuilder.success(
                 HttpStatus.CREATED,
-                ResponseMessages.created("User"),
+                ResponseMessages.Resource.created("User"),
                 userService.register(dto)
+        );
+    }
+    @PostMapping("/login/")
+    public ResponseEntity<ApiResponse<LoginResponseDTO>> login(@Valid @RequestBody LoginRequestDTO dto) {
+        LoginResponseDTO loginResponse = userService.login(dto);
+        return ResponseBuilder.success(
+                HttpStatus.OK,
+                ResponseMessages.Auth.loginSuccessful(),
+                loginResponse
         );
     }
 

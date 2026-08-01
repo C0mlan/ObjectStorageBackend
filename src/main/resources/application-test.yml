@@ -2,3 +2,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+
+security:
+  jwt:
+    secret: Yh3Kv8Qm2Lp7Rw5Nc1Zd9Tx4Fa6Ju0BeHs8MgWq2Cr5Xn9VkPt1Df7La3Sy4UzEj
+    access-token-expiry: 900000
+    refresh-token-expiry: 604800000

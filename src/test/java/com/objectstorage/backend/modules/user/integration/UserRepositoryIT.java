@@ -1,16 +1,17 @@
 package com.objectstorage.backend.modules.user.integration;
 
-import com.objectstorage.backend.config.AbstractTest;
+
 import com.objectstorage.backend.modules.user.model.AuthProvider;
 import com.objectstorage.backend.modules.user.model.Role;
 import com.objectstorage.backend.modules.user.model.User;
 import com.objectstorage.backend.modules.user.model.UserStatus;
 import com.objectstorage.backend.modules.user.repository.UserRepository;
+import com.objectstorage.backend.security.config.AbstractTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+
 
 
 

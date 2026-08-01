@@ -1,14 +1,14 @@
 package com.objectstorage.backend.modules.user.integration;
 
 import com.objectstorage.backend.common.exception.user.EmailAlreadyExists;
-import com.objectstorage.backend.config.AbstractTest;
+import com.objectstorage.backend.security.config.AbstractTest;
 import com.objectstorage.backend.modules.user.dto.RegisterRequestDTO;
 import com.objectstorage.backend.modules.user.dto.RegisterResponseDTO;
 import com.objectstorage.backend.modules.user.model.User;
 import com.objectstorage.backend.modules.user.repository.UserRepository;
 import com.objectstorage.backend.modules.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.junit.jupiter.api.Test;;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.time.LocalDateTime;
@@ -110,8 +110,6 @@ class UserServiceIT extends AbstractTest {
 
         assertEquals("john.doe@example.com", saved.getEmail());
     }
-
-
 
 
 }

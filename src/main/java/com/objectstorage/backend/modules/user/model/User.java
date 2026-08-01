@@ -37,6 +37,7 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
+    @Builder.Default
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 

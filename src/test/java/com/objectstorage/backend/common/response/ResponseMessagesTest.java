@@ -11,7 +11,7 @@ public class ResponseMessagesTest {
     void created_shouldReturnExpectedMessage() {
         assertEquals(
                 "User created successfully.",
-                ResponseMessages.created("User")
+                ResponseMessages.Resource.created("User")
         );
     }
 
@@ -19,7 +19,7 @@ public class ResponseMessagesTest {
     void updated_shouldReturnExpectedMessage() {
         assertEquals(
                 "User updated successfully.",
-                ResponseMessages.updated("User")
+                ResponseMessages.Resource.updated("User")
         );
     }
 
@@ -27,7 +27,7 @@ public class ResponseMessagesTest {
     void deleted_shouldReturnExpectedMessage() {
         assertEquals(
                 "User deleted successfully.",
-                ResponseMessages.deleted("User")
+                ResponseMessages.Resource.deleted("User")
         );
     }
 
@@ -35,7 +35,7 @@ public class ResponseMessagesTest {
     void retrieved_shouldReturnExpectedMessage() {
         assertEquals(
                 "User retrieved successfully.",
-                ResponseMessages.retrieved("User")
+                ResponseMessages.Resource.retrieved("User")
         );
     }
 

@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class UserMapperTest {
 
@@ -43,14 +43,14 @@ class UserMapperTest {
     void shouldMapUserToDTOSuccessfully() {
         RegisterResponseDTO result = UserMapper.toDTO(testUser);
 
-        assertThat(result).isNotNull();
-        assertThat(result.getId()).isEqualTo(testUserId);
-        assertThat(result.getEmail()).isEqualTo("john@example.com");
-        assertThat(result.getFirstName()).isEqualTo("John");
-        assertThat(result.getLastName()).isEqualTo("Doe");
-        assertThat(result.getRole()).isEqualTo("USER");
-        assertThat(result.getStatus()).isEqualTo(UserStatus.ACTIVE);
-        assertThat(result.getCreatedAt()).isEqualTo(testDateTime);
+        assertNotNull(result);
+        assertEquals(testUserId, result.getId());
+        assertEquals("john@example.com", result.getEmail());
+        assertEquals("John", result.getFirstName());
+        assertEquals("Doe", result.getLastName());
+        assertEquals("USER", result.getRole());
+        assertEquals(UserStatus.ACTIVE, result.getStatus());
+        assertEquals(testDateTime, result.getCreatedAt());
     }
 
 
